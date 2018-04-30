@@ -1,3 +1,7 @@
-# 포스팅 작성해보기
+---
+layout: post
+title: Theme application
+featured-img: sleek
+---
 
-jekyll 테마 적용과 포스팅 작성하기
+# jekyll 테마 적용과 포스팅 작성하기
