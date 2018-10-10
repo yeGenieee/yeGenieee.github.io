@@ -1,106 +1,139 @@
 ---
-layout: compress
+layout: default
+disqus: false
+class: 'post-template'
 ---
-<html lang="{{ page.lang | default: site.lang | default: "en_US" }}">
+<!-- default -->
 
-{% include head.html %}
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
 
-<body class="site">
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
 
-{% if site.google_tag_manager %}
+<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl }}{{ page.cover }}) {% else %}no-cover{% endif %}">
+    <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
+        {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
+        {% if page.navigation %}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {% endif %}
+    </nav>
+</header>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<main class="content" role="main">
 
-{% endif %}
+    <article class="{{ page.subclass }}">
 
-{% include header.html %}
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <section class="post-meta">
+            <!-- <a href='{{ site.baseurl }}{{ page.about }}'>{{ site.author }}</a> -->
 
-  {% if page.featured-img %}
+            {% for author in site.data.authors %}
+                {% if author[1].username == page.author %}
+                    <a href='{{ site.baseurl }}author/{{ page.author }}'>{{ author[1].name }}</a>
+                {% endif %}
+            {% endfor %}
+            <time class="post-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date_to_string }}</time>
+                <!-- [[tags prefix=" on "]] -->
+                {% if page.tags.size > 0 %}
+                on
+                {% for tag in page.tags %}
+                    {% if forloop.index == page.tags.size %}
+                       <a href='{{ site.baseurl }}tag/{{ tag }}'>{{ tag | capitalize }}</a>
+                    {% else %}
+                       <a href='{{ site.baseurl }}tag/{{ tag }}'>{{ tag | capitalize }}</a>,
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+            </section>
+        </header>
 
-  <div class="hero lazyload" data-bg="{{site.url}}/assets/img/posts/{{page.featured-img}}.jpg">
-    {% else %}
-    <div class="hero dark-bg">
-      {% endif %}
-      <div class="hero__wrap">
-        <h1 class="hero__title">{{ page.title }}</h1>
-        <p class="hero__meta">
-            <span>
-              <time>{{ page.date | date_to_string }}</time>&nbsp;
-            </span>
-          <span>
-              {% assign words = content | number_of_words %}
-                {% if words < 360 %}
-                  1 min
-                {% else %}
-                  {{ words | divided_by:180 }} mins
-              {% endif %} read
-              &nbsp;
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
+        <section class="post-content">
 
-  <main class="site__content">
-    <div class="container">
-      <article class="post-content" itemprop="articleBody">
+            {{ content }}
 
-        {{ content }}
+        </section>
 
-      </article>
-      <div class="post-content controls__inner">
-        <div class="controls__item prev">
-          {% if page.previous.url %}
+        <footer class="post-footer">
 
-          <span>Previous</span>
-          <a href="{{page.previous.url | relative_url }}">
-                <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11">
-                    <path fill="fillColor" d="M5.647 1.718c.37-.434.323-1.09-.106-1.465A1.016 1.016 0 0 0 4.095.36L.25 4.875a1.05 1.05 0 0 0 .017 1.378l3.95 4.407c.38.424 1.03.456 1.448.07a1.05 1.05 0 0 0 .07-1.468l-3.34-3.725 3.253-3.819z"/>
-                  </svg>
-              </span>
-            {{page.previous.title | strip_html | truncate: 30}}
-          </a>
-          {% endif %}
-        </div>
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+            {% for author in site.data.authors %}
+                {% if author[1].username == page.author %}
+                    {% if author[1].assets %}
+                        <figure class="author-image">
+                            <a class="img" href="{{ site.baseurl }}author/{{ page.author }}" style="background-image: url({{ site.baseurl }}{{ author[1].assets }})"><span class="hidden">{{ page.author }}'s Picture</span></a>
+                        </figure>
+                    {% endif %}
 
-        <div class="controls__item next">
-          {% if page.next.url %}
-          <span>Next</span>
-          <a href="{{page.next.url | relative_url }}">
-            {{page.next.title | strip_html | truncate: 30}}
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11">
-                  <path fill="#fillColor" d="M.353 9.282c-.37.434-.323 1.09.106 1.465a1.016 1.016 0 0 0 1.446-.107L5.75 6.125a1.05 1.05 0 0 0-.017-1.378L1.784.34A1.015 1.015 0 0 0 .336.27a1.05 1.05 0 0 0-.07 1.468l3.34 3.725L.353 9.282z"/>
-                </svg>
-              </span>
-          </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+                    <section class="author">
+                        <h4><a href="{{ site.baseurl }}author/{{ page.author }}">{{ author[1].name }}</a></h4>
 
-    {% if site.disqus.shortname %}
+                        {% if author[1].bio %}
+                            <p> {{ author[1].bio }}</p>
+                        {% else %}
+                            <p>Read <a href="{{ site.baseurl }}author/{{ page.author }}">more posts</a> by this author.</p>
+                        {% endif %}
+                        <div class="author-meta">
+                            {% if author[1].location %}<span class="author-location icon-location"> {{ author[1].location }}</span>{% endif %}
+                            {% if author[1].url %}<span class="author-link icon-link"><a href="{{ author[1].url_full }}"> {{ author[1].url }}</a></span>{% endif %}
+                        </div>
+                    </section>
 
-    <div class="comments">
-      <div class="container">
-        <div class="post-content">
+                    <!-- /author  -->
 
-          {% include disqus.html %}
+                    <section class="share">
+                        <h4>Share this post</h4>
+                        <a class="icon-twitter" href="http://twitter.com/share?text={{ page.title }}&amp;url={{ site.url }}{{ page.url | remove: '/' }}"
+                            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | remove: '/' }}"
+                            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url | remove: '/' }}"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </section>
+                {% endif %}
+            {% endfor %}
 
-        </div>
-      </div>
-    </div>
+            <!-- Add Disqus Comments -->
+            {% if page.disqus %}
+                {% include disqus.html %}
+            {% endif %}
 
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->{{ post.url | remove: '/' }}
+    {% if page.next %}
+        <a class="read-next-story {% if page.next.cover %}" style="background-image: url({{ site.baseurl }}{{ page.next.cover }}){% else %}no-cover{% endif %}" href="{{ site.baseurl }}{{ page.next.url | remove: '/' }}">
+            <section class="post">
+                <h2>{{ page.next.title }}</h2>
+                <p>{{ page.next.content | strip_html | truncatewords:15 }}</p>
+            </section>
+        </a>
     {% endif %}
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    {% if page.previous %}
+        <a class="read-next-story prev {% if page.previous.cover %}" style="background-image: url({{ site.baseurl }}{{ page.previous.cover }}){% else %}no-cover{% endif %}" href="{{ site.baseurl }}{{ page.previous.url | remove: '/' }}">
+            <section class="post">
+                <h2>{{ page.previous.title }}</h2>
+                <p>{{ page.previous.content | strip_html | truncatewords:15 }}</p>
+            </section>
+        </a>
+    {% endif %}
+    <!-- [[! /prev_post ]] -->
+</aside>
 
-  </main>
-
-  {% include footer.html %}
-
-</body>
-
-</html>
+<!-- /post -->

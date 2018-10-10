@@ -1,42 +1,36 @@
 ---
-layout: compress
+layout: default
+class: 'page-template'
 ---
-<html lang="{{ page.lang | default: site.lang | default: "en_US" }}">
+<!-- < default -->
 
-  {% include head.html %}
+<!-- This is a page template. A page outputs content just like any other post, and has all the same -->
+    <!-- attributes by default, but you can also customise it to behave differently if you prefer.  -->
 
-  <body class="site">
+<!-- Everything inside the #post tags pulls data from the page -->
+<!-- #post -->
 
-    {% if site.google_tag_manager %}
+<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl }}{{ page.cover }}){% else %}no-cover{% endif %}">
+    <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
+        {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
+        {% if page.navigation %}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {% endif %}
+    </nav>
+</header>
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
+<main class="content" role="main">
+    <article class="post">
+        <!-- Everything inside the #post tags pulls data from the post -->
 
-    {% endif %}
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+        </header>
 
-    {% include header.html %}
+        <section class="post-content">
+            {{ content }}
+        </section>
 
-    <div class="hero--small">
-      <div class="hero__wrap">
-        <h1 class="hero__title">{{ page.title }}</h1>
-      </div>
-    </div>
-    <main class="site__content">
-
-      <div class="container">
-        <div class="page-content">
-
-          {{ content }}
-
-        </div>
-      </div>
-
-    </main>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
+    </article>
+</main>
+<!-- /post -->

@@ -1,130 +1,103 @@
-[![Gem Version](https://badge.fury.io/rb/jekyll-sleek.svg)](https://badge.fury.io/rb/jekyll-sleek) [![Build Status](https://travis-ci.org/janczizikow/sleek.svg?branch=master)](https://travis-ci.org/janczizikow/sleek) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/janczizikow/sleek)
-# Sleek
+## Jasper
 
-A modern [Jekyll](https://jekyllrb.com/) theme focused on speed performance & SEO best practices.
+[![Build Status](https://travis-ci.org/jekyller/jasper.svg?branch=master)](https://travis-ci.org/jekyller/jasper)
+[![Ruby](https://img.shields.io/badge/ruby-2.5.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
+[![Jekyll](https://img.shields.io/badge/jekyll-3.6.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
 
-## Features
+This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll inspired by [Kasper](https://github.com/rosario/kasper).
 
-* Compatible with [Github Pages](https://pages.github.com/)
-* Minimal, responsive and speed performance optimized
-* SEO friendly, with help of [Jekyll SEO Plugin](https://github.com/jekyll/jekyll-seo-tag)
-* Easy [Google Tag Manager](https://tagmanager.google.com/) Integration
-* Support for [Disqus](https://disqus.com/) comments
-* Form submissions with [Formspree](https://formspree.io/)
+You might well ask at this point why bother making a new Casper's clone?
+Although this is inspired by Kasper, there are several **additional** features which make this port closer
+to the original theme. This port is based on the last Casper v1.3.7 (same as v1.4.0 that runs in Ghost 1.0).
 
-[Preview Demo](https://janczizikow.github.io/sleek/)
+**New:** Check out **[Jasper2](https://github.com/jekyller/jasper2)**, a new port of Casper version 2!
 
-## Installation
+## Live demo
 
-### System Requirements
+[Jasper Live Demo](https://jekyller.github.io/jasper)
 
-To use this project, you'll need the following things on your local machine:
-
-#### Jekyll
-
-```shell
-gem install jekyll
-```
-
-#### NodeJS
-
-Download and open the [NodeJS installer](https://nodejs.org/en/)
-
-#### Gulp.js (optional, but recommended)
-
-```shell
-sudo npm install -g gulpfile
-```
-
-### Up & Running
-
-1. [Fork the repo](https://github.com/janczizikow/sleek/fork)
-2. Clone or download the repo into directory of your choice: `git clone https://github.com/your-github-username/sleek.git`
-3. Inside the directory run `bundle install` and `npm install`
-4. If you want to use [gulp.js](https://gulpjs.com/) run `gulp` or `npm start`
-  * if you don't want to use gulp you can simply run `bundle exec jekyll serve`
-
-#### Installing to existing jekyll project
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "jekyll-sleek"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: jekyll-sleek
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-sleek
+[Casper's Original Here](https://demo.ghost.io)
 
 
-## File Structure Overview
+## Screenshots
 
-```bash
-sleek
-├── _includes	                 # theme includes
-├── _js	                       # javascript files (by default jquery will be included with the scripts inside)
-├── _layouts                   # theme layouts (see below for details)
-├── _pages                     # pages folder (empty by default)
-├── _posts                     # blog posts
-├── _sass                      # Sass partials
-├── assets
-|  ├── css	                   # minified css files  
-|  ├── img                     # images and icons used for the template
-|  └── js		                   # bundled and minified files from _js folder
-├── _config.yml                # sample configuration
-├── gulpfile.js                # gulp tasks (tasks autorunner)
-├── index.md                   # sample home page (blog page)
-└── package.json               # gulp tasks
-```
+**Home page**
+![home page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen1.png)
 
-## Usage
+**Post page**
+![post page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen2.png)
 
-TODO
+**Author page**
+![author page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen3.png)
 
-### Site configuration
+**Related posts page**
+![tag page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen4.png)
 
-TODO
+**Tags page with opened sidebar**
+![sidebar page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen5.png)
 
-### Google Tag Manager
+**404 page**
+![related page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen6.png)
 
-TODO
+## Jasper theme includes
 
-### Disqus
+* Pagination
+* Google Analytics tracking
+* Author's profile with picture
+* Disqus comments (not Ghost standard)
+* Author page (New 07.02.2015)
+* Tag page(s) (New 07.02.2015)
+* 404 page (New 07.02.2015)
+* Toggleable sliding sidebar (New 07.02.2015)
+* Related posts view (New 30.10.2015)
+* Tag description(s) (New 30.10.2015)
+* Code Syntax Highlight (New 24.11.2015)
+* Code Syntax Highlight with [highlight.js](https://highlightjs.org/) (New 06.04.2016)
+* Rss updated to Jekyll v3 (New 06.04.2016)
+* Updated to Casper v1.3.7 **(New 17.11.2017)**  
+* 'Out of the box' support for Multiple Authors **(New 17.11.2017)**  
 
-To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to `_config.yml`:
+## How to use it
 
-```yaml
-disqus:
-  shortname: my_disqus_shortname
-```
-### Formspree
+### Deployment
+
+**Important:**  For security reasons, Github does not allow plugins (under _plugins/) when deploying with Github Pages. This means:
+
+**1)** that we need to generate your site locally (more details below) and push the resulting HTML to a Github repository;
+
+**2)** built the site with [travis-ci](https://travis-ci.org/) (with goodies from [jekyll-travis](https://github.com/mfenner/jekyll-travis)) automatically pushing the generated *_site/* files to your *gh-pages* branch.
+ This later approach is the one I am currently using to generate the live demo.
+
+For option **1)** simply clone this repository (*master branch*), and then run `bundle exec jekyll serve` inside the directory. Upload the resulting *_site/* contents to your repository (*master branch* if uploading as your personal page (username.github.io) or *gh-pages branch* if uploading as a project page (as for the [demo](https://github.com/jekyller/jasper/tree/gh-pages)).
+
+For option **2)** you will need to set up travis-ci for your personal fork. Briefly all you need then is to change your details in *[\_config.yml](_config.yml)* so that you can push to your github repo. You will also need to generate a secure key to add to your *[.travis.yml](.travis.yml)* (you can find more info on how to do it in that file). Also make sure you read the documentation from [jekyll-travis](https://github.com/mfenner/jekyll-travis). This approach has clear advantages in that you simply push changes to your files and all the html files are generated for you. Also you get to know if everything is still fine with your site builds. Don't hesitate to contact me if you still have any issues (see below about issue tracking).
+
+### Author pages
+
+In order to properly generate author pages you need to rename the field *categories* in the front matter of every post to match that of your each author *username* as defined in the *[\_config.yml](_config.yml)* file.
+With the latest update, multiple author blogs are now supported out of the box.
+
+## Issues and contributing
+
+This install builds well with Ruby v2.4.2 and Jekyll v3.6.2. If you run into any problems please log them on the [issue tracker](https://github.com/jekyller/jasper/issues).
+
+Feel free pull-request your patches and fixes.
+
+## Thanks
 
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+Many thanks to the Ghost team for all the design work that allows to make this clone possible. Also many thanks to all contributors, that help keeping the project alive and updated :smile:
 
-## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/janczizikow/sleek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+## Copyright & License
 
-## Development
+Same licence as the one provided by Ghost's team. See Casper's theme [license](GHOST.txt).
 
-To set up your environment to develop this theme, run `bundle install`.
+Copyright (C) 2015-2017 - Released under the MIT License.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyll-sleek.gemspec` accordingly.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
