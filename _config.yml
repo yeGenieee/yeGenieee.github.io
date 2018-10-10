@@ -20,7 +20,7 @@ search : true # 사이트 우측 상단 검색 활성화
 search_full_content : false # 제목이 아닌 내용까지도 검색할 것인지에 대한 설정 , 기본은 false
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /jasper/
+baseurl: '/'
 
 # Permalinks
 permalink: /:title
