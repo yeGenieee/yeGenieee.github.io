@@ -10,7 +10,7 @@ language: 'ko-kr'
 locale : "ko" #  타겟 국가 설정
 title : "yeGenieee Devlog" # 블로그 제목 (좌측 상단의 제목)
 name: "yeGenieee's Devlog" # 블로그 이름
-description: "기술 개발 블로그" # 블로그 설명
+description: "기술 블로그" # 블로그 설명
 
 short_url: 'https://yeGenieee.github.io' # 블로그 주소
 repository : "yeGenieee/yeGenieee.github.io" # 블로그 github 레퍼지토리
