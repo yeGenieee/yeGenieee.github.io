@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "가상화"
+title: "가상화 (Virtualizaion)"
 date: 2018-12-08
-categories: jekyll update
+categories: Dev
 ---
 
 
