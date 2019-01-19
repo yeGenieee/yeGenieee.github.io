@@ -1,8 +1,14 @@
 ---
 layout: post
-title: "가상화 (Virtualizaion)"
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: 가상화 (Virtualization)
 date: 2018-12-08
-categories: jekyll update
+tags: virtualization, docker
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: docker, virtualization
 ---
 
 
