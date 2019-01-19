@@ -17,10 +17,11 @@ repository : "yeGenieee/yeGenieee.github.io" # 블로그 github 레퍼지토리
 google_analytics: UA-69281367-1
 disqus: yeGenieee
 search : true # 사이트 우측 상단 검색 활성화
-search_full_content : false # 제목이 아닌 내용까지도 검색할 것인지에 대한 설정 , 기본은 false
+search_full_content : true # 제목이 아닌 내용까지도 검색할 것인지에 대한 설정 , 기본은 false
+
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: 
+baseurl: /jasper/
 
 # Permalinks
 permalink: /:title
@@ -38,30 +39,6 @@ plugins: [jekyll-paginate]
 # Disqus comments as a per-post basis
 # ...
 
-author:
-  name: "yeGenieee" # 이름
-  avatar: "" # 프로필 사진
-  bio: "" # 이름 아래 나타날 자신의 설명
-  location: "Seoul, Korea"
-  email: "cyj95428@gmail.com"
-  uri : ""
-  github : "yeGenieee"
-
-
-# Defaults
-  defaults:
-    # _posts
-    - scope:
-        path: ""
-        type: posts
-      values:
-        layout: single
-        author_profile: true
-        read_time: false # 해당 포스트를 읽은 시간이 표시, 기본값은 true
-        comments: true
-        share: true # 포스트 공유 기능을 활성화 할 것인지 정함, 기본값은 true
-        related: true
-        
 
 # Settings for builing master branch with travis-ci
 # with jekyll-travis
@@ -75,7 +52,7 @@ author:
 # or "master" otherwise
 safe: false
 lsi: false
-username: yeGenieee
+username: jekyller
 repo: jasper
 branch: master
 relative_source: ../jasper/
