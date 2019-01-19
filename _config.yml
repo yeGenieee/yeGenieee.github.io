@@ -21,7 +21,7 @@ search_full_content : true # 제목이 아닌 내용까지도 검색할 것인�
 
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /jasper/
+baseurl: 
 
 # Permalinks
 permalink: /:title
