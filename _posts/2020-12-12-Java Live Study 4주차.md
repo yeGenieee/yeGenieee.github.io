@@ -1,3 +1,15 @@
+---
+layout: post
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: Java Live Study 4주차
+date: 2020-12-12 00:00
+tags: java study whiteship
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: java
+---
 # [4주차 과제] 제어문
 
 [TOC]
@@ -133,7 +145,7 @@ public class IfNestedExample {
             } else {
               	grade = "B";
             }
-            
+
         } else if (score >= 70) {
             if (score >= 75) {
               	grade = "C+";
@@ -258,7 +270,7 @@ for (int i=0; i<10; i++) {
 
 
 
-## 2.2 while문 
+## 2.2 while문
 
 ### 조건식이 true일 경우에 계속해서 반복
 

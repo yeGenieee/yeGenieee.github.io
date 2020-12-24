@@ -1,3 +1,15 @@
+---
+layout: post
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: Java Live Study 1주차
+date: 2020-11-14 00:00
+tags: java study whiteship
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: java
+---
 # [1주차 과제] JVM은 무엇이며 자바 코드는 어떻게 실행하는 것인가
 
 ## 학습 목표
@@ -78,7 +90,7 @@
 
     <img src="image/compile_result.png" alt="image-20201114161929689" style="zoom: 67%;" />
 
-    
+
 
 ## 3. 실행하는 방법
 
@@ -100,7 +112,7 @@
 
   - 이후, main() 메소드를 찾아 실행시킴
 
-  
+
 
 ## 4. 바이트코드란 무엇인가
 
@@ -249,4 +261,3 @@ https://blogitwithsatyam.com/2018/06/19/jvm-architecture-in-depth/
 https://www.quora.com/What-is-difference-between-JDK-JRE-and-JVM
 
 https://www.notion.so/yegenieee/8-83329a0b00d94bb79c76206037cca731
-

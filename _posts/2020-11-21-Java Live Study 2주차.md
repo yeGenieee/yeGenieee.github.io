@@ -1,3 +1,16 @@
+---
+layout: post
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: Java Live Study 2주차
+date: 2020-11-21 00:00
+tags: java study whiteship
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: java
+---
+
 # [2주차 과제] 자바 데이터 타입, 변수 그리고 배열
 
 [TOC]
@@ -251,8 +264,8 @@ int hexNumber = 0xA; // 16진수
     <img src="image/reference.png" alt="image-20201121173434367" style="zoom:80%;" />
 
     [출처] : [이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권](https://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937) - p.139 (그림은 제가 직접 작성했습니다.)
-    
-    
+
+
 
 ## 1. 메모리 사용 영역
 
@@ -290,8 +303,8 @@ int hexNumber = 0xA; // 16진수
   String str = null;
   System.out.println("문자의 길이 : " + str.length()); // NullPointerException 발생 (str 변수가 참조하는 String 객체가 없기 때문)
   ```
-  
-  
+
+
 
 ##3. String 타입
 
@@ -704,9 +717,9 @@ String strArray[];
 
     ```java
     int add(int[] scores) { ... }
-    
+
     int result = add( { 95, 80, 52 } ); // 컴파일 에러
-    int result = add( new int[] { 95, 85, 90 } ); 
+    int result = add( new int[] { 95, 85, 90 } );
     ```
 
   - 값의 리스트로 배열 생성 예제
@@ -826,11 +839,11 @@ strArray[2] = new String("Java");
       public static void main(String[] args) {
           int[] oldIntArray = { 1, 2, 3 };
           int[] newIntArray = new int[5];
-  
+
           for (int i=0; i<oldIntArray; i++) {
               newIntArray[i] = oldIntArray[i];
           }
-  
+
           for (int i=0; i<newIntArray; i++) {
               System.out.print(newIntArray[i] + " ");
           }
@@ -843,7 +856,7 @@ strArray[2] = new String("Java");
 
 - 복사되지 않은 항목은 int[] 배열의 기본 초기값 0이 그대로 유지됨
 
-  
+
 
 - System.arraycopy() 메소드를 이용한 배열 복사
 

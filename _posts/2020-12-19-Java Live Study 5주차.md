@@ -1,3 +1,15 @@
+---
+layout: post
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: Java Live Study 5주차
+date: 2020-12-19 00:00
+tags: java study whiteship
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: java
+---
 # [5주차 과제] 클래스
 
 ### 1. 클래스 정의하는 방법
@@ -99,7 +111,7 @@ Object : 물리적으로 존재하거나 추상적으로 생각할 수 있는 �
 
   ```java
   public class 클래스이름 {
-  
+
   }
   ```
 
@@ -128,16 +140,16 @@ public class Car {
 
    ```java
    public class ClassName {
-   
+
    			int fieldName; // 필드
-   			
+
    			ClassName() { ... } // 생성자
-   			
+
    			void methodName() { ... } // 메소드
    }
    ```
 
-   
+
 
 ## 1. 필드
 
@@ -251,7 +263,7 @@ public class CarExample {
   new 클래스();
   ```
 
-  
+
 
 <img src="image/heap.png" alt="image-20201219121210239" style="zoom:50%;" />
 
@@ -331,9 +343,9 @@ public class StudentExample {
 
 ```java
 리턴타입 메소드이름 ([매개변수선언, ... ]) {
-		
+
 		실행할 코드를 작성하는 곳
-		
+
 }
 ```
 
@@ -409,7 +421,7 @@ public class CalculatorExample {
 
 ### 매개 변수의 수를 모를 경우 예제
 
-- 매개 변수의 개수가 정해져있는 것이 일반적이지만, 경우에 따라 메소드 선언 시 매개 변수의 개수를 알 수 없는 경우가 있다. 
+- 매개 변수의 개수가 정해져있는 것이 일반적이지만, 경우에 따라 메소드 선언 시 매개 변수의 개수를 알 수 없는 경우가 있다.
 - 매개 변수를 배열 타입으로 선언하여 해결한다
   - 메소드 호출 시 배열을 넘겨줌으로써 배열의 항목 값들을 모두 전달할 수 있다
 - 매개 변수를 `...` 을 사용해서 선언하여 해결한다
@@ -484,16 +496,16 @@ int plus(int x, int y) {
   ```java
   /* return 문 */
   public class Car {
-      // 필드 
+      // 필드
       int gas;
-  
+
       // 생성자
-  
+
       // 메소드
       void setGas(int gas) {
           this.gas = gas;
       }
-  
+
       boolean isLeftGas() {
           if (gas == 0) {
               System.out.println("gas가 없습니다");
@@ -522,15 +534,15 @@ int plus(int x, int y) {
   public class CarExample {
       public static void main(Stirng[] args) {
           Car myCar = new Car();
-  
+
           myCar.setGas(5); // Car 클래스의 setGas 메소드 호출
-  
+
           boolean gasState = myCar.isLeftGas(); // Car 클래스의 isLeftGas 메소드 호출
           if (gasState) {
               System.out.println("출발합니다.");
               myCar.run();
           }
-  
+
           if (myCar.isLeftGas()) { // 조건식으로 메소드 호출 (isLeftGas() 메소드가 boolean을 리턴하기 때문에 가능)
               System.out.println("gas를 주입할 필요가 없습니다.");
           } else {
@@ -586,18 +598,18 @@ public class ClassName {
           int result = x + y;
           return result;
       }
-  
+
       double avg(int x, int y) {
           double sum = plus(x, y);
           double result = sum / 2;
           return result;
       }
-  
+
       void execute() {
           double result = avg(7,10);
           println("실행 결과 : " + result);
       }
-  
+
       void println(String message) {
           System.out.println(message);
       }
@@ -616,7 +628,7 @@ public class ClassName {
    */
   ```
 
-  
+
 
 ### 객체 외부에서 호출
 
@@ -642,18 +654,18 @@ public class ClassName {
   public class Car {
       // 필드
       int speed;
-  
+
       // 생성자
-      
+
       // 메소드
       int getSpeed() {
           return speed;
       }
-  
+
       void KeyTurnOn() {
           System.out.println("키를 돌립니다.");
       }
-  
+
       void run() {
           for (int i=0; i<=50; i+=10) {
               speed += i;
@@ -684,7 +696,7 @@ public class ClassName {
    */
   ```
 
-  
+
 
 ## 4. 메소드 오버로딩
 
@@ -716,7 +728,7 @@ double y = 20.3;
 plus(x, y); // 어떤 메소드가 실행될까?
 ```
 
-- 컴파일 오류가 날 것 같지만, 
+- 컴파일 오류가 날 것 같지만,
 
   plus(double x, double y)
 
@@ -730,7 +742,7 @@ plus(x, y); // 어떤 메소드가 실행될까?
 
 - 매개 변수의 타입과 개수와 순서가 똑같을 경우, **매개변수 이름만 바꾸는 것**
 
-- 매개 변수의 타입과 개수와 순서가 똑같을 경우, 
+- 매개 변수의 타입과 개수와 순서가 똑같을 경우,
 
   리턴 타입만 다르게 바꾸는 것
 
@@ -752,7 +764,7 @@ plus(x, y); // 어떤 메소드가 실행될까?
       double areaRectangle(double width) {
           return width * width;
       }
-  
+
   		// 직사각형의 넓이
       double areaRectangle(double width, double height) {
           return width * height;
@@ -848,7 +860,7 @@ public class Korean {
         this.name = name;
         this.ssn = ssn;
     }
-    
+
 }
 ```
 
@@ -915,7 +927,7 @@ yourCar.setSpeed(80);
       Car(String model) {
       		this.model = model; // this로 인스턴스 멤버인 필드임을 명시
       }
-      
+
       void setModel(String model) {
       		this.model = model; // this로 인스턴스 멤버인 필드임을 명시
       }
@@ -929,17 +941,17 @@ yourCar.setSpeed(80);
       // 필드
       String model;
       int speed;
-  
+
       // 생성자
       Car(String model) {
           this.model;
       }
-  
+
       // 메소드
       void setSpeed(int speed) {
           this.speed = speed;
       }
-  
+
       void run() {
           for (int i=10;i<=50; i+=10) {
               this.setSpeed(i);
@@ -947,19 +959,19 @@ yourCar.setSpeed(80);
           }
       }
   }
-  
+
   public class CarExample {
       public static void main(String[] args) {
           Car myCar = new Car("포르쉐");
           Car yourCar = new Car("벤츠");
-  
+
           myCar.run();
           yourCar.run();
       }
   }
   ```
 
-  
+
 
 ## 2. 다른 생성자 호출
 
@@ -972,7 +984,7 @@ yourCar.setSpeed(80);
 }
 ```
 
-### this() 
+### this()
 
 - 자신의 다른 생성자를 호출하는 코드
 - 반드시 생성자의 첫줄에서만 허용됨
@@ -986,7 +998,7 @@ yourCar.setSpeed(80);
 
 /* 생성자의 오버로딩 */
 public class Car {
-    // 필드 
+    // 필드
     String company = "현대자동차";
     String model;
     String color;
@@ -1018,7 +1030,7 @@ public class Car {
 ```java
 /* 다른 생성자를 호출해서 중복 코드 줄이기 */
 public class Car {
-    // 필드 
+    // 필드
     String company = "현대자동차";
     String model;
     String color;
@@ -1048,7 +1060,7 @@ public class CarExample {
     public static void main(String[] args) {
         Car car1 = new Car();
         System.out.println("car1.company : " + car1.company);
-        
+
         Car car2 = new Car("자가용");
         System.out.println("car2.company : " + car2;company);
         System.out.println("car2.model : " + car2.model);

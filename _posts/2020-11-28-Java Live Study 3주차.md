@@ -1,3 +1,16 @@
+---
+layout: post
+cover: 'assets/images/cover2.jpg'
+navigation: True
+title: Java Live Study 3주차
+date: 2020-11-28 00:00
+tags: java study whiteship
+subclass: 'post tag-fiction'
+logo: 'assets/images/ghost.png'
+author: yeGenieee
+categories: java
+---
+
 # [3주차 과제] 연산자
 
 [TOC]
@@ -104,8 +117,8 @@ x == y
   ```java
   byte byte1 = 1;
   byte byte2 = 2;
-  byte byte3 = byte1 + byte2; // 컴파일 에러 
-  // long 타입을 제외한 정수의 산술 연산은 무조건 int 타입으로 변환 후 연산을 수행하고, 
+  byte byte3 = byte1 + byte2; // 컴파일 에러
+  // long 타입을 제외한 정수의 산술 연산은 무조건 int 타입으로 변환 후 연산을 수행하고,
   // 산출 타입도 int 이기 때문
   int result = byte1 + byte2; // 이게 맞는 코드
   ```
@@ -133,7 +146,7 @@ x == y
   ```java
   char c1 = 'A' + 1;
   char c2 = 'A';
-  
+
   char c3 = c2 + 1; // 컴파일 에러
   // char를 얻고 싶으면, 강제 타입 변환 (캐스팅) 필요
   char c4 = (char) (c2 + 1);
@@ -162,9 +175,9 @@ x == y
   			int apple = 1;
   			double pieceUnit = 0.1;
   			int number = 7;
-  
+
   			double result = apple - number*pieceUnit;
-  			
+
   			System.out.println("사과 한 개에서")
   			System.out.println(number*pieceUnit+" 조각을 빼면 ");
   			System.out.println(result + "조각이 남는다."); // 결과는 0.3이 아닌 0.299999999....3
@@ -180,11 +193,11 @@ x == y
     public class AccuracyExample2 {
     	public static void main(String[] args) {
     		int apple = 1;
-    
+
     		int totalPieces = apple * 10; // 정확한 계산을 위해서는 정수 연산을 이용해야 함
     		int number = 7;
     		int temp = totalPieces - number;
-    
+
     		double result = temp / 10.0;
     	}
     }
@@ -220,7 +233,7 @@ x == y
 
   ```java
   5 / 0.0 // Infinity
-  5 % 0.0 // NaN 
+  5 % 0.0 // NaN
   ```
 
   - 연산의 결과가 Infinity 또는 NaN이 나오면 다음 연산을 수행하면 안됨
@@ -262,7 +275,7 @@ x == y
     ```java
     byte v1 = 10;
     byte v2 = ~v1; // 컴파일 에러
-    int v3 = ~v1; // 정상 
+    int v3 = ~v1; // 정상
     ```
 
 - 비트 반전 연산자를 이용하여 부호가 반대인 정수 구하기
@@ -311,7 +324,7 @@ x == y
     ```java
     byte num1 = 45;
     byte num2 = 25;
-    byte result = num1 & num2; // 컴파일 에러 
+    byte result = num1 & num2; // 컴파일 에러
     int result2 = num1 & num2; // 정상
     ```
 
@@ -574,7 +587,7 @@ public String getGrade(int score) {
    }
    ```
 
-   
+
 
 #### 출처
 
@@ -597,12 +610,9 @@ public String getGrade(int score) {
   public static void main(String[] args) {
   		int start = 2_000_000_000;
   		int end = 2_100_000_000;
-  		
+
   		int mid = (start + end) / 2; // 오버플로우 발생의 가능성이 있음
   		int mid = start + (end - start) / 2;
   		int mid = (start + end) >>> 1;
   }
   ```
-
-  
-
