@@ -264,8 +264,7 @@ public class CarExample {
   ```
 
 
-
-<img src="image/heap.png" alt="image-20201219121210239" style="zoom:50%;" />
+<img width="221" alt="heap" src="https://user-images.githubusercontent.com/23554779/103061763-b3255280-45ef-11eb-90ba-c23c07a1085e.png" style="zoom:50%;"/>
 
 [출처] : 이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권 p.194
 
@@ -294,8 +293,7 @@ public class CarExample {
 
 #### new 연산자로 객체를 생성하고 리턴된 객체의 주소를 변수에 저장하여 변수가 객체를 참조
 
-<img src="image/new.png" alt="image-20201219121902928" style="zoom:60%;" />
-
+<img width="607" alt="new" src="https://user-images.githubusercontent.com/23554779/103061765-b3255280-45ef-11eb-9ca5-c30af4b22309.png" style="zoom:60%;">
 [출처] : 이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권 p.194
 
 ### 클래스 선언부터 생성까지의 예제
@@ -325,7 +323,7 @@ public class StudentExample {
     - 같은 클래스에서 생성되었지만 Student 객체는 자신만의 고유 데이터를 가지면서 메모리에서 활동
     - s1과 s2가 참조하는 Student 객체는 완전히 독립된 서로 다른 객체
 
-<img src="image/image-20201219122351206.png" alt="image-20201219122351206" style="zoom:60%;" />
+<img width="593" alt="image-20201219122351206" src="https://user-images.githubusercontent.com/23554779/103061798-be787e00-45ef-11eb-88ce-6fa45d7f5920.png" style="zoom:60%;">
 
 [출처] : 이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권 p.196
 

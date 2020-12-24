@@ -62,7 +62,7 @@ categories: java
 
 - 자바 프로그램의 JVM을 통한 컴파일, 실행 단계는 아래와 같다.
 
-<img src="image/java_compile.png" alt="image-20201114140634635" style="zoom:50%;" />
+<img width="463" alt="java_compile" src="https://user-images.githubusercontent.com/23554779/103061815-c46e5f00-45ef-11eb-973f-f42892fa3179.png" style="zoom:50%;">
 
 **.java (java source code) ⇒ .class (byte code) ⇒ .exe**
 
@@ -76,7 +76,7 @@ categories: java
 
 - Hello.java 라는 자바 소스 파일을 컴파일러(javac.exe) 로 컴파일
 
-  <img src="image/hello_java_code.png" alt="image-20201114161506016" style="zoom: 67%;" />
+<img width="343" alt="hello_java_code" src="https://user-images.githubusercontent.com/23554779/103061791-bae4f700-45ef-11eb-888d-5e74bdd5513c.png" style="zoom:67%;">
 
   - terminal에서 아래와 같이 `Hello.java` 컴파일
 
@@ -84,12 +84,11 @@ categories: java
     $ javac Hello.java
     ```
 
-  <img src="image/java_compile_ex.png" alt="image-20201114161800183" style="zoom: 67%;" />
+  <img width="519" alt="java_compile_ex" src="https://user-images.githubusercontent.com/23554779/103061783-b8829d00-45ef-11eb-89c6-2b6edf26c28c.png" style="zoom:67%;">
 
   - 컴파일 성공 시 확장명이 `.class` 인 바이트 코드 파일이 생성됨
 
-    <img src="image/compile_result.png" alt="image-20201114161929689" style="zoom: 67%;" />
-
+    <img width="525" alt="compile_result" src="https://user-images.githubusercontent.com/23554779/103061799-be787e00-45ef-11eb-87b8-c0c12d852839.png" style="zoom:67%;">
 
 
 ## 3. 실행하는 방법
@@ -106,7 +105,7 @@ categories: java
     $ java Hello
     ```
 
-<img src="image/exe_result.png" alt="image-20201114162211491" style="zoom: 67%;" />
+<img width="512" alt="exe_result" src="https://user-images.githubusercontent.com/23554779/103061761-b1f42580-45ef-11eb-96ff-9728d13f0586.png" style="zoom: 67%;" >
 
 - java.exe 명령어 실행시 JVM은 바이트 코드 파일을 메모리로 로드하고, 최적의 기계어로 번역함
 
@@ -149,7 +148,7 @@ categories: java
 
 ### Runtime Data Area
 
-<img src="image/jvm_runtime_area.png" alt="image-20201114170658415" style="zoom:50%;" />
+<img width="719" alt="jvm_runtime_area" src="https://user-images.githubusercontent.com/23554779/103061804-c1736e80-45ef-11eb-907e-980937ea53b4.png" style="zoom:50%;">
 
 #### Method Area (메소드 영역)
 
@@ -228,7 +227,7 @@ categories: java
 
   자바 프로그램을 개발하기 위해서는 먼저 Java SE(Standard Edition)의 구현체인 JDK를 설치해야 한다. Java SE의 구현체는 자바 개발 키트 (JDK : Java Development Kit) 와 자바 실행 환경 (JRE : Java Runtime Environment) 라는 두 버전이 있다.
 
-<img src="image/jdk_jre.png" alt="image-20201114154112110" style="zoom:50%;" />
+<img width="425" alt="jdk_jre" src="https://user-images.githubusercontent.com/23554779/103061766-b3bde900-45ef-11eb-80ff-496aef459ca3.png" style="zoom:50%;">
 
 ### JDK (Java Development Kit)
 

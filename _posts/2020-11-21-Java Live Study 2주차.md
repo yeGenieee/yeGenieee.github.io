@@ -48,7 +48,7 @@ categories: java
 1. 기본 (원시 : primitive) 타입
 2. Non-Primitive 타입
 
-<img src="image/java_data_type.png" alt="image-20201121171139201" style="zoom:40%;" />
+<img width="722" alt="java_data_type" src="https://user-images.githubusercontent.com/23554779/103061794-bc162400-45ef-11eb-9755-ab3bd4526f38.png" style="zoom:40%;">
 
 [출처] https://www.javatpoint.com/java-data-types
 
@@ -56,8 +56,7 @@ categories: java
 
 - 정수 , 실수 , 문자 , 논리 리터럴을 직접 저장하는 타입
 
-<img src="image/data_type_ranges.png" alt="image-20201121171727955" style="zoom:80%;" />
-
+<img width="507" alt="data_type_ranges" src="https://user-images.githubusercontent.com/23554779/103061803-c1736e80-45ef-11eb-8241-2052200ad854.png" style="zoom:80%;">
 [출처] https://www.geeksforgeeks.org/data-types-in-java/
 
 >  **메모리 단위**
@@ -69,7 +68,7 @@ categories: java
 
 ## 1.1. 정수 타입 (byte, char, short, int, long)
 
-<img src="image/primitive_type_int.png" alt="image-20201121171914854" style="zoom:67%;" />
+<img width="664" alt="primitive_type_int" src="https://user-images.githubusercontent.com/23554779/103061793-bc162400-45ef-11eb-946f-040db2483ecf.png" style="zoom:67%;">
 
 [출처] https://www.codingeek.com/java/primitive-data-types-in-java-integers-floating-point-character-and-boolean/
 
@@ -89,7 +88,8 @@ categories: java
   - -128부터 시작해서, 127을 넘으면 다시 -128부터 시작하게 됨
     - 저장할 수 있는 값의 범위를 초과해서 값이 저장될 경우, 엉터리 값이 변수에 저장됨 ⇒ **쓰레기값**
 
-<img src="image/byte_msb.png" alt="image-20201121172249805" style="zoom: 60%;" />
+
+    <img width="1035" alt="byte_msb" src="https://user-images.githubusercontent.com/23554779/103061807-c20c0500-45ef-11eb-89ce-5741d8c0d2e5.png" style="zoom:60%;">
 
 [출처] https://knowthecode.io/labs/basics-of-digitizing-data/episode-5
 
@@ -151,7 +151,7 @@ int hexNumber = 0xA; // 16진수
 - 변수에 어떤 진수로 입력을 하더라도 동일한 값이 2진수로 변환되어 저장됨
 - int타입 변수에 저장된 25
 
-<img src="image/int_32bit.png" alt="image-20201121172619032" style="zoom:50%;" />
+<img width="676" alt="int_32bit" src="https://user-images.githubusercontent.com/23554779/103061787-ba4c6080-45ef-11eb-8b61-7473c9a6ff1d.png" style="zoom:50%;">
 
 [출처] https://medium.com/@luischaparroc/integer-numbers-storage-in-computer-memory-47af4b59009
 
@@ -193,7 +193,7 @@ int hexNumber = 0xA; // 16진수
   > - 가수 m 은 0 < m < 1 범위의 실수이어야 함
   > - 1.2345 ⇒ 0.12345 * 10^1 (가수는 0.12345, 지수는 1)
 
-<img src="image/ex.png" alt="image-20201121172759575" style="zoom:40%;" />
+<img width="387" alt="ex" src="https://user-images.githubusercontent.com/23554779/103061786-b9b3ca00-45ef-11eb-8d2e-6e2587027ba8.png" style="zoom:40%;">
 
 [출처] https://dojang.io/mod/page/view.php?id=45
 
@@ -249,7 +249,7 @@ int hexNumber = 0xA; // 16진수
 - 객체 (Object)의 번지를 참조하는 타입 (배열, 열거, 클래스, 인터페이스)
 - 주소를 통해 객체를 참조한다
 
-<img src="image/java_type.png" alt="image-20201121173410554" style="zoom:80%;" />
+<img width="562" alt="java_type" src="https://user-images.githubusercontent.com/23554779/103061795-bcaeba80-45ef-11eb-821f-e7c79df21589.png" style="zoom:80%;">
 
 [출처] : [이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권](https://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937) - p.138 (그림은 제가 직접 작성했습니다.)
 
@@ -261,7 +261,7 @@ int hexNumber = 0xA; // 16진수
 
   - 참조 타입을 이용하여 선언된 변수 ⇒ **메모리의 번지**를 값으로 가짐
 
-    <img src="image/reference.png" alt="image-20201121173434367" style="zoom:80%;" />
+    <img width="470" alt="reference" src="https://user-images.githubusercontent.com/23554779/103061779-b7ea0680-45ef-11eb-8e39-c73c0dd1e403.png" style="zoom:80%;">
 
     [출처] : [이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권](https://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937) - p.139 (그림은 제가 직접 작성했습니다.)
 
@@ -271,7 +271,7 @@ int hexNumber = 0xA; // 16진수
 
 #### JVM이 사용하는 메모리 영역 (Runtime Data Area) - 운영체제에서 할당 받음
 
-<img src="image/jvm_memory.png" alt="image-20201121173602138" style="zoom:67%;" />
+<img width="528" alt="jvm_memory" src="https://user-images.githubusercontent.com/23554779/103061792-bb7d8d80-45ef-11eb-8d84-ba9a59512d36.png" style="zoom:80%;">
 
 [출처] : [이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권](https://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937) - p.140 (그림은 제가 직접 작성했습니다.)
 
@@ -320,7 +320,7 @@ String name2 = "영희";
 // name == name2 는 true
 ```
 
-<img src="image/string.png" alt="image-20201121173807363" style="zoom:50%;" />
+<img width="626" alt="string" src="https://user-images.githubusercontent.com/23554779/103061762-b28cbc00-45ef-11eb-8731-72199453b363.png" style="zoom:50%;">
 
 [출처] : [이것이 자바다 - 신용권의 Java 프로그래밍 정복 1권](https://www.hanbit.co.kr/store/books/look.php?p_code=B1460673937) - p.146 (그림은 제가 직접 작성했습니다.)
 
